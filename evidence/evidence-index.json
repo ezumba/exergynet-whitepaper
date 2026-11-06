@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "paper": "ExergyNet V5 White Paper",
+  "doi": "10.5281/zenodo.24021817",
+  "pdf_sha256": "416974f1d7c1f4d569866027e2ff7a58d7480ed80b87738d8203feb6e518b0eb",
+  "generated": "2026-11-06",
+  "note": "All evidence entries reflect the V5 public disclosure boundary. INTERNAL_RESTRICTED entries confirm the evidence exists but is not released.",
+  "entries": [
+    {
+      "id": "EV-001",
+      "claim": "Estimated persistent state tokens at 100M development operating point",
+      "value": "≈ 101,152,694",
+      "unit": "tokens (estimated)",
+      "v5_section": "Section 2.1, Table 1",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Single development cohort run. Estimated, not independently counted token-by-token.",
+      "baseline": "Not applicable"
+    },
+    {
+      "id": "EV-002",
+      "claim": "Sealed holdout state tokens",
+      "value": "≈ 10,100,000",
+      "unit": "tokens (estimated)",
+      "v5_section": "Section 2.1, Table 1",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Sealed, separate run from development cohort. Not included in performance figures.",
+      "baseline": "Not applicable"
+    },
+    {
+      "id": "EV-003",
+      "claim": "Total matched query executions in development cohort",
+      "value": "190",
+      "unit": "query executions",
+      "v5_section": "Section 2.1, Table 1",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Development cohort only.",
+      "baseline": "Not applicable"
+    },
+    {
+      "id": "EV-004",
+      "claim": "Median active context tokens per query (K)",
+      "value": "800",
+      "unit": "tokens (median)",
+      "v5_section": "Section 2.1, Table 1",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Median across 190 matched executions. Individual queries vary.",
+      "baseline": "Not applicable"
+    },
+    {
+      "id": "EV-005",
+      "claim": "N/K ratio at 100M development operating point",
+      "value": "≈ 126,440",
+      "unit": "ratio (computed)",
+      "v5_section": "Section 1.1, Table 1",
+      "source": "V5 white paper (computed from N and median K)",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Derived from median K. Not a constant; individual query ratios vary.",
+      "baseline": "Not applicable"
+    },
+    {
+      "id": "EV-006",
+      "claim": "Median paired retrieval speedup",
+      "value": "220.5×",
+      "unit": "ratio (median)",
+      "v5_section": "Section 2.2, Table 2",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Paired measurement against naive full-state scan on same hardware. 190 matched executions. Measures time-to-relevant-context, not total inference time.",
+      "baseline": "Paired naive full-state scan on same hardware"
+    },
+    {
+      "id": "EV-007",
+      "claim": "Mean paired retrieval speedup",
+      "value": "415.9×",
+      "unit": "ratio (mean)",
+      "v5_section": "Section 2.2, Table 2",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Mean substantially exceeds median due to long right tail. 190 matched executions.",
+      "baseline": "Paired naive full-state scan on same hardware"
+    },
+    {
+      "id": "EV-008",
+      "claim": "H200 correct-task throughput vs. A100 baseline",
+      "value": "11.3×",
+      "unit": "ratio (correct-task throughput)",
+      "v5_section": "Section 2.3, Table 3",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Correct-task throughput metric, not raw token throughput. Development operating point. H200 vs. A100 only.",
+      "baseline": "NVIDIA A100 at 100M development operating point"
+    },
+    {
+      "id": "EV-009",
+      "claim": "Baseline answer accuracy on adversarial synthetic benchmark",
+      "value": "45.3%",
+      "unit": "percent correct",
+      "v5_section": "Section 2.3, Table 3",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Adversarial synthetic benchmark designed to test persistent-state recall failures. Not a measure of general model accuracy.",
+      "baseline": "Adversarial synthetic benchmark"
+    },
+    {
+      "id": "EV-010",
+      "claim": "Authority gate live result — adversarial instruction rejected",
+      "value": "DENY issued; action not executed",
+      "unit": "single observed event",
+      "v5_section": "Section 3.2",
+      "source": "V5 white paper",
+      "classification": "PUBLIC_DOCUMENTED",
+      "raw_data": "INTERNAL_RESTRICTED",
+      "limitations": "Single observed event in specific live production-adjacent environment. Not a statistical claim. Not a general security guarantee.",
+      "baseline": "Not applicable"
+    },
+    {
+      "id": "EV-011",
+      "claim": "V5 PDF SHA-256 integrity",
+      "value": "416974f1d7c1f4d569866027e2ff7a58d7480ed80b87738d8203feb6e518b0eb",
+      "unit": "SHA-256 hash",
+      "v5_section": "Paper artifact",
+      "source": "Zenodo record 24021817",
+      "classification": "PUBLIC_INDEPENDENTLY_VERIFIABLE",
+      "raw_data": "PUBLIC_INDEPENDENTLY_VERIFIABLE",
+      "limitations": "Verifiable against Zenodo canonical record.",
+      "baseline": "Not applicable"
+    }
+  ]
+}

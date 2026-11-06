@@ -1,0 +1,131 @@
+name: Validate Publication
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate publication integrity and metadata
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2f  # v5.3.0
+        with:
+          python-version: "3.11"
+
+      - name: Install PyYAML (for metadata validation)
+        run: pip install pyyaml==6.0.2
+
+      - name: Verify PDF integrity
+        run: python scripts/verify_publication.py
+
+      - name: Validate metadata
+        run: python scripts/validate_metadata.py
+
+      - name: Check required files exist
+        run: |
+          required_files=(
+            "README.md"
+            "CITATION.cff"
+            "LICENSE-STATUS.md"
+            "COPYRIGHT.md"
+            "CONTRIBUTING.md"
+            "SECURITY.md"
+            "CODE_OF_CONDUCT.md"
+            "CHANGELOG.md"
+            "paper/EXERGYNET_WHITEPAPER_PUBLIC_V5.pdf"
+            "paper/EXERGYNET_WHITEPAPER_PUBLIC_V5.sha256"
+            "paper/SHA256SUMS"
+            "evidence/evidence-index.json"
+            "evidence/publication-provenance.json"
+            "diagrams/public-architecture.mmd"
+          )
+          failed=0
+          for f in "${required_files[@]}"; do
+            if [ -f "$f" ]; then
+              echo "PASS  $f"
+            else
+              echo "FAIL  $f (not found)"
+              failed=1
+            fi
+          done
+          exit $failed
+
+      - name: Check for forbidden patterns
+        run: |
+          forbidden_patterns=(
+            "PRIVATE_KEY"
+            "AWS_SECRET"
+            "sk-"
+            "-----BEGIN"
+            "LNES-22"
+            "LNES-84"
+            "agent_shell_gate"
+            "otet_harness"
+            "portal.exergynet.org/api/admin"
+          )
+          failed=0
+          for pattern in "${forbidden_patterns[@]}"; do
+            matches=$(git grep -rl "$pattern" -- \
+              ':!paper/*.pdf' \
+              ':!paper/*.sha256' \
+              ':!paper/SHA256SUMS' \
+              ':!.github/workflows/validate-publication.yml' \
+              2>/dev/null || true)
+            if [ -n "$matches" ]; then
+              echo "FAIL  Forbidden pattern '$pattern' found in:"
+              echo "$matches" | while read -r f; do echo "        $f"; done
+              failed=1
+            fi
+          done
+          if [ $failed -eq 0 ]; then
+            echo "PASS  No forbidden patterns found"
+          fi
+          exit $failed
+
+      - name: Validate CITATION.cff structure
+        run: |
+          python - <<'EOF'
+          import yaml, sys
+          with open("CITATION.cff") as f:
+              data = yaml.safe_load(f)
+          required = ["cff-version", "title", "version", "doi", "authors"]
+          missing = [k for k in required if k not in data]
+          if missing:
+              print(f"FAIL  CITATION.cff missing fields: {missing}")
+              sys.exit(1)
+          expected_doi = "10.5281/zenodo.24021817"
+          if expected_doi not in str(data.get("doi", "")):
+              print(f"FAIL  CITATION.cff DOI mismatch: {data.get('doi')}")
+              sys.exit(1)
+          print(f"PASS  CITATION.cff valid (DOI: {data['doi']})")
+          EOF
+
+      - name: Validate evidence JSON files
+        run: |
+          python - <<'EOF'
+          import json, sys
+          expected_doi = "10.5281/zenodo.24021817"
+          expected_sha = "416974f1d7c1f4d569866027e2ff7a58d7480ed80b87738d8203feb6e518b0eb"
+          errors = []
+          for path in ["evidence/evidence-index.json", "evidence/publication-provenance.json"]:
+              with open(path) as f:
+                  data = json.load(f)
+              if expected_doi not in str(data.get("doi", "")):
+                  errors.append(f"{path}: DOI mismatch ({data.get('doi')})")
+              print(f"PASS  {path} valid JSON")
+          if errors:
+              for e in errors:
+                  print(f"FAIL  {e}")
+              sys.exit(1)
+          EOF

@@ -1,0 +1,53 @@
+name: Documentation Issue
+description: Report an error, ambiguity, or omission in the repository documentation
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to report issues in the repository documentation
+        (README, research/, docs/, diagrams/).
+
+        Do NOT use this for:
+        - Questions about V5 results (use the Research Question template)
+        - Issues with the PDF itself (see DOI record at https://doi.org/10.5281/zenodo.24021817)
+        - Requests for unreleased data or source code
+
+  - type: input
+    id: file
+    attributes:
+      label: File or Section
+      description: Which file or section contains the issue?
+      placeholder: "e.g., docs/faq.md, research/limitations.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue Type
+      options:
+        - Factual error (contradicts V5 paper)
+        - Ambiguous or unclear text
+        - Broken link
+        - Formatting issue
+        - Missing information
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the issue. If a factual error, cite the relevant V5 section.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Correction
+      description: Optional. What should the text say instead?
+    validations:
+      required: false

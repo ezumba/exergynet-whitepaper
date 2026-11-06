@@ -1,0 +1,16 @@
+# Line endings
+* text=auto
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.py text eol=lf
+*.cff text eol=lf
+*.mmd text eol=lf
+
+# Binary — do not diff or merge
+*.pdf binary
+*.png binary
+*.jpg binary
+*.ico binary

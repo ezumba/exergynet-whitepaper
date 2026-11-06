@@ -1,0 +1,27 @@
+---
+title: ExergyNet V5 — Public Architecture Overview
+---
+flowchart TD
+    Agent["AI Agent\n(LLM Runtime)"]
+
+    subgraph ExergyNet["ExergyNet Persistent Memory System"]
+        BAC["Bounded Active Context\n(K tokens · median 800)"]
+        PMI["Persistent Memory Interface\n(Governed Retrieval)"]
+        GRB["Governed Retrieval Boundary\n(Authority Gate)"]
+        PS["Persistent State\n(N tokens · ≈101M at 100M op. point)"]
+    end
+
+    Agent -->|"Query\n(active context window)"| BAC
+    BAC <-->|"Retrieval request"| PMI
+    PMI -->|"Policy evaluation"| GRB
+    GRB -->|"Authorized retrieval"| PS
+    PS -->|"Retrieved state\n(within K budget)"| PMI
+    PMI -->|"Augmented context\n(K tokens)"| BAC
+    BAC -->|"Response\n(augmented by persistent state)"| Agent
+
+    style Agent fill:#1e293b,color:#e2e8f0,stroke:#334155
+    style BAC fill:#0f766e,color:#f0fdfa,stroke:#0d9488
+    style PMI fill:#0f766e,color:#f0fdfa,stroke:#0d9488
+    style GRB fill:#7c3aed,color:#faf5ff,stroke:#8b5cf6
+    style PS fill:#0f766e,color:#f0fdfa,stroke:#0d9488
+    style ExergyNet fill:#0d1117,color:#94a3b8,stroke:#1e293b

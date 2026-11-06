@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "artifact": "ExergyNet V5 White Paper",
+  "filename": "EXERGYNET_WHITEPAPER_PUBLIC_V5.pdf",
+  "sha256": "416974f1d7c1f4d569866027e2ff7a58d7480ed80b87738d8203feb6e518b0eb",
+  "doi": "10.5281/zenodo.24021817",
+  "zenodo_record": "https://zenodo.org/records/24021817",
+  "version": "5.0",
+  "publication_date": "2026",
+  "authors": [
+    {
+      "name": "Seven Ezumba",
+      "affiliation": "ExergyNet / Ezumba Dynasty Trust"
+    },
+    {
+      "name": "ExergyNet Research",
+      "affiliation": "ExergyNet"
+    }
+  ],
+  "classification": "PUBLIC",
+  "disclosure_boundary": "V5 public disclosure boundary — see evidence/README.md and evidence/evidence-index.json for per-claim classification",
+  "not_included": [
+    "Raw benchmark JSONL fixtures",
+    "Per-query measurement logs",
+    "Benchmark harness source code",
+    "Internal operational logs",
+    "Hardware configuration details beyond V5 paper",
+    "Cryptographic keys or capability registries",
+    "Production control-plane source code",
+    "Authority layer policy enforcement implementations",
+    "Production routing internals",
+    "Memory routing control logic"
+  ],
+  "repository_note": "This repository is a sanitized publication repository. It was initialized from a clean staging directory, not from the proprietary development history.",
+  "integrity_verification": {
+    "method": "SHA-256",
+    "hash": "416974f1d7c1f4d569866027e2ff7a58d7480ed80b87738d8203feb6e518b0eb",
+    "verify_against": "https://doi.org/10.5281/zenodo.24021817",
+    "local_verification": "sha256sum paper/EXERGYNET_WHITEPAPER_PUBLIC_V5.pdf"
+  }
+}

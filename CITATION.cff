@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it using the metadata below."
+title: "Memory Grows. Context Does Not Have To."
+subtitle: "ExergyNet: Persistent Machine Infrastructure for the 100M-Token Horizon"
+type: report
+version: "5.0"
+date-released: "2026-11-06"
+doi: "10.5281/zenodo.24021817"
+url: "https://doi.org/10.5281/zenodo.24021817"
+repository-artifact: "https://zenodo.org/records/24021817"
+authors:
+  - family-names: "Ezumba"
+    given-names: "Seven"
+    affiliation: "ExergyNet"
+  - family-names: "Bontu"
+    given-names: "Veena"
+    affiliation: "ExergyNet Research"
+keywords:
+  - persistent memory
+  - machine learning infrastructure
+  - language models
+  - context management
+  - active context
+  - retrieval systems
+  - authority layer
+  - AI infrastructure
+abstract: >-
+  ExergyNet decouples persistent memory from active context delivery.
+  As stored state scales toward and beyond 100 million tokens, the delivered
+  context per query remains bounded — by design, not by limitation. V5
+  characterizes this relationship at a development operating point, presents
+  retrieval performance data from a live environment, examines accelerator
+  infrastructure behavior at that operating point, and reports a live
+  authority-layer result from a production-adjacent environment.
+license-url: "https://github.com/exergynet/exergynet-whitepaper/blob/main/LICENSE-STATUS.md"

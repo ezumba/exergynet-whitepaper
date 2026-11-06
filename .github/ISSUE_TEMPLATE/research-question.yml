@@ -1,0 +1,55 @@
+name: Research Question
+description: Ask a question about the ExergyNet V5 research results, methodology, or claims
+labels: ["research-question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting, please review:
+        - [FAQ](../../docs/faq.md)
+        - [Limitations](../../research/limitations.md)
+        - [Benchmark Methodology](../../research/benchmark-methodology.md)
+
+        Questions about production infrastructure, unreleased data, or
+        internal implementation details will be closed without response.
+
+  - type: input
+    id: paper_section
+    attributes:
+      label: V5 Section Reference
+      description: Which section or table of the V5 paper does your question relate to?
+      placeholder: "e.g., Table 2, Section 3.2, Section 4.1"
+    validations:
+      required: false
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: >
+        State your question clearly. If asking about a specific claim,
+        quote the relevant text from the paper.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: >
+        What prompted your question? Have you reviewed the companion
+        research documents (research/limitations.md, research/benchmark-methodology.md)?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I have read the [FAQ](../../docs/faq.md)
+          required: false
+        - label: I have read [research/limitations.md](../../research/limitations.md)
+          required: false
+        - label: My question is about published V5 content, not production systems
+          required: true

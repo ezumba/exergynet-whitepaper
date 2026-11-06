@@ -1,0 +1,52 @@
+# Operating system
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Editors
+.vscode/
+.idea/
+*.iml
+
+# Sensitive / internal
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*_secret*
+*_private*
+*credentials*
+aws_config
+~/.aws/
+
+# Internal operational files — must never be committed to this repo
+*_INTERNAL*
+*_RESTRICTED*
+*_PRIVATE*
+LNES-*/
+lnes-*/
+
+# Temporary build artifacts
+tmp/
+temp/
+*.tmp
+*.log
