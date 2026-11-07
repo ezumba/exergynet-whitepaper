@@ -32,4 +32,4 @@ abstract: >-
   retrieval performance data from a live environment, examines accelerator
   infrastructure behavior at that operating point, and reports a live
   authority-layer result from a production-adjacent environment.
-license-url: "https://github.com/exergynet/exergynet-whitepaper/blob/main/LICENSE-STATUS.md"
+license-url: "https://github.com/ezumba/exergynet-whitepaper/blob/main/LICENSE-STATUS.md"
