@@ -42,9 +42,9 @@ K to the model before inference. Growth in N does not force growth in K.
 
 ### 2. Memory and inference
 
-The retrieval layer operates before inference, not during it. This is not
-in-context retrieval augmentation — it is a pre-inference selection step
-that produces a bounded context window.
+The retrieval layer selects relevant content from the persistent store
+before inference, delivering a bounded context window regardless of total
+storage size.
 
 ### 3. Proposal and execution
 

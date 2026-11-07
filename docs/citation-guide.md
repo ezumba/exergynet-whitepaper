@@ -7,6 +7,10 @@
 Always cite by DOI when possible. The DOI resolves to the canonical Zenodo
 record and is the persistent, citable identifier for V5.
 
+**Canonical title:** Memory Grows. Context Does Not Have To.
+**Subtitle:** ExergyNet: Persistent Machine Infrastructure for the 100M-Token Horizon
+**Authors:** Seven Ezumba, Veena Bontu
+
 ---
 
 ## Citation Formats
@@ -14,8 +18,8 @@ record and is the persistent, citable identifier for V5.
 ### APA 7th Edition
 
 ```
-Ezumba, S., & ExergyNet Research. (2026). *ExergyNet: Persistent memory
-infrastructure for AI systems — V5 technical characterization*
+Ezumba, S., & Bontu, V. (2026). *Memory grows. Context does not have to.
+ExergyNet: Persistent machine infrastructure for the 100M-token horizon*
 (Version 5.0). Zenodo. https://doi.org/10.5281/zenodo.24021817
 ```
 
@@ -24,8 +28,8 @@ infrastructure for AI systems — V5 technical characterization*
 ### MLA 9th Edition
 
 ```
-Ezumba, Seven, and ExergyNet Research. "ExergyNet: Persistent Memory
-Infrastructure for AI Systems — V5 Technical Characterization."
+Ezumba, Seven, and Veena Bontu. "Memory Grows. Context Does Not Have To.
+ExergyNet: Persistent Machine Infrastructure for the 100M-Token Horizon."
 Zenodo, 2026, https://doi.org/10.5281/zenodo.24021817.
 ```
 
@@ -34,8 +38,8 @@ Zenodo, 2026, https://doi.org/10.5281/zenodo.24021817.
 ### Chicago Author-Date
 
 ```
-Ezumba, Seven, and ExergyNet Research. 2026. "ExergyNet: Persistent Memory
-Infrastructure for AI Systems — V5 Technical Characterization."
+Ezumba, Seven, and Veena Bontu. 2026. "Memory Grows. Context Does Not Have To.
+ExergyNet: Persistent Machine Infrastructure for the 100M-Token Horizon."
 Zenodo. https://doi.org/10.5281/zenodo.24021817.
 ```
 
@@ -44,8 +48,8 @@ Zenodo. https://doi.org/10.5281/zenodo.24021817.
 ### ACM Reference Format
 
 ```
-Seven Ezumba and ExergyNet Research. 2026. ExergyNet: Persistent Memory
-Infrastructure for AI Systems — V5 Technical Characterization.
+Seven Ezumba and Veena Bontu. 2026. Memory Grows. Context Does Not Have To.
+ExergyNet: Persistent Machine Infrastructure for the 100M-Token Horizon.
 (2026). DOI:https://doi.org/10.5281/zenodo.24021817
 ```
 
@@ -55,13 +59,13 @@ Infrastructure for AI Systems — V5 Technical Characterization.
 
 ```bibtex
 @techreport{ezumba2026exergynet,
-  title   = {ExergyNet: Persistent Memory Infrastructure for AI Systems ---
-             {V5} Technical Characterization},
-  author  = {Ezumba, Seven and {ExergyNet Research}},
-  year    = {2026},
-  url     = {https://doi.org/10.5281/zenodo.24021817},
-  doi     = {10.5281/zenodo.24021817},
-  note    = {Version 5.0. Ezumba Dynasty Trust.}
+  title    = {Memory Grows. Context Does Not Have To.},
+  subtitle = {ExergyNet: Persistent Machine Infrastructure for the 100M-Token Horizon},
+  author   = {Ezumba, Seven and Bontu, Veena},
+  year     = {2026},
+  url      = {https://doi.org/10.5281/zenodo.24021817},
+  doi      = {10.5281/zenodo.24021817},
+  note     = {Version 5.0. Ezumba Dynasty Trust.}
 }
 ```
 
@@ -72,9 +76,9 @@ Infrastructure for AI Systems — V5 Technical Characterization.
 When citing specific figures from V5, include the section or table reference:
 
 ```
-(Ezumba & ExergyNet Research, 2026, Table 2)   # retrieval speedup
-(Ezumba & ExergyNet Research, 2026, Table 3)   # H200 throughput
-(Ezumba & ExergyNet Research, 2026, §3.2)      # authority gate
+(Ezumba & Bontu, 2026, Table 2)   # retrieval speedup
+(Ezumba & Bontu, 2026, Table 3)   # H200 throughput
+(Ezumba & Bontu, 2026, §3.2)      # authority gate
 ```
 
 ---

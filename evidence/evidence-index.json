@@ -59,7 +59,7 @@
       "claim": "N/K ratio at 100M development operating point",
       "value": "≈ 126,440",
       "unit": "ratio (computed)",
-      "v5_section": "Section 1.1, Table 1",
+      "v5_section": "computed from Section 2.1, Table 1",
       "source": "V5 white paper (computed from N and median K)",
       "classification": "PUBLIC_DOCUMENTED",
       "raw_data": "INTERNAL_RESTRICTED",

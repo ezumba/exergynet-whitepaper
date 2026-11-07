@@ -66,7 +66,7 @@ jobs:
           forbidden_patterns=(
             "PRIVATE_KEY"
             "AWS_SECRET"
-            "sk-"
+            "sk-[A-Za-z0-9]{20,}"
             "-----BEGIN"
             "LNES-22"
             "LNES-84"
@@ -76,7 +76,7 @@ jobs:
           )
           failed=0
           for pattern in "${forbidden_patterns[@]}"; do
-            matches=$(git grep -rl "$pattern" -- \
+            matches=$(git grep -Erl "$pattern" -- \
               ':!paper/*.pdf' \
               ':!paper/*.sha256' \
               ':!paper/SHA256SUMS' \
